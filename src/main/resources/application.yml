@@ -1,6 +1,8 @@
 spring:
   application:
     name: ai-passage-creator
+  main:
+    allow-bean-definition-overriding: true
   profiles:
     active: local
   # session 配置
@@ -11,16 +13,21 @@ spring:
   # MySQL 数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ai_passage_creator
+    url: jdbc:mysql://192.168.0.88:3306/ai_passage_creator?autoReconnect=true&useSSL=false
     username: root
-    password: 123456
+    password: KMwater@91@99
+    hikari:
+      max-lifetime: 30000
+      connection-timeout: 10000
+      validation-timeout: 3000
+      keepalive-time: 10000
   # Redis 配置
   data:
     redis:
       host: localhost
       port: 6379
       database: 0
-      password:
+      password: eR8#xK2!pL9$mZ5&qW3*Yv7@
 mybatis-flex:
   configuration:
     map-underscore-to-camel-case: false
